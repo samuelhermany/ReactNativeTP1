@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { View, Text, TextInput, Button } from 'react-native';
 
-
 export default function App() {
     const [value, setValue] = useState('');
     const [tipo, setTipo] = useState('');
@@ -10,11 +9,11 @@ export default function App() {
         const numero = parseInt(value); // Converte o valor para um número
         if (numero %2 == 0) {
             setTipo(`O número ${value} é par`);
-            setValue('');
         } else {
             setTipo(`O número ${value} é ímpar`);
-            setValue('');
         }
+
+        setValue('');
     }
 
     return (
@@ -29,17 +28,3 @@ export default function App() {
         </View>
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      alignItems: 'center',
-    },
-    imagem: {
-      width: 150,
-      height: 150,
-    },
-    titulo: {
-      marginBottom: 20,
-    },
-  });
