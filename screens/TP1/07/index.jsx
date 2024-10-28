@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { TouchableHighlight } from 'react-native-gesture-handler';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
 
 export default function App() {
     const [counter, setCounter] = useState(0);
@@ -16,12 +15,12 @@ export default function App() {
     return (
         <View>
             <View style={styles.botoes}>
-                <TouchableHighlight style={styles.button} onPress={increment}>
+                <Pressable style={styles.button} onPress={increment}>
                     <Text style={styles.buttonText}>+</Text>
-                </TouchableHighlight>
-                <TouchableHighlight style={styles.button} onPress={decrement}>
+                </Pressable>
+                <Pressable style={styles.button} onPress={decrement}>
                     <Text style={styles.buttonText}>-</Text>
-                </TouchableHighlight>
+                </Pressable>
             </View>
                 <Text style={styles.counterText}>{counter}</Text>
         </View>
