@@ -1,5 +1,5 @@
 import { StyleSheet, View } from 'react-native';
-import CardMovie from './cardMovie';
+import CardMovie from './CardMovie';
 
 export default function App() {
     return (
