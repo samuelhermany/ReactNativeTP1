@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { View, Text, TextInput,  Pressable, StyleSheet } from "react-native";
 import { TodoItem } from './TodoItem';
-import { TouchableOpacity } from "react-native";
 
 export default function App() {
     const [tarefas, setTarefas] = useState([]);
