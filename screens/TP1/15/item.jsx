@@ -16,15 +16,12 @@ export const Item = ({questoes}) => {
     setSelectedOption(index)
     if(index === questaoAtual.opcao_correta){
       setPontuacao((prevPontuacao) => prevPontuacao + 1)
-      // alert("acertou = "+ pontuacao)
     }
 
     setTimeout(() => {
       setNumeroQuestaoAtual((prevNumero) => prevNumero + 1);
       setSelectedOption(null)
-      // alert("index selecionado = " + index)
     }, 1000);
-    // alert("pontuacao = " + pontuacao)
   }
 
   useEffect(() => {
