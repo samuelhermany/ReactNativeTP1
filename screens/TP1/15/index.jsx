@@ -1,11 +1,11 @@
 import { View, StyleSheet } from 'react-native';
 import { Item } from './item';
-import { perguntas } from './data';
+import { questoes } from './data';
 
 export default function App() {
     return (
         <View style={styles.container}>
-            <Item  perguntas={perguntas}/>
+            <Item  questoes={questoes}/>
         </View>
     )
 }

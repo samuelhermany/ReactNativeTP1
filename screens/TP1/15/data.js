@@ -1,4 +1,4 @@
-export const perguntas = [
+export const questoes = [
     {
         pergunta: "1) O que é o React Native?",
         opcoes: [
