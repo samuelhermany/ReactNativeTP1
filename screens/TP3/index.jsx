@@ -2,7 +2,7 @@ import { View, Button } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { ScrollView } from "react-native";
 
-export default function TP2() {
+export default function TP3() {
   const navigation = useNavigation();
 
   return (
