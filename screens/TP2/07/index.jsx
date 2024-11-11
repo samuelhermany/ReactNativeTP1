@@ -21,7 +21,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
    flex: 1,   
-   justifyContent: 'space-between'
+   justifyContent: 'flex-end'
   },  
   item: {
     paddingHorizontal:10,
