@@ -1,7 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import TP1 from "../TP1";
-import TP1_01 from "@screens/TP1/01";
-import TP1_02 from "@screens/TP1/02";
+import TP1_01 from "../TP1/01";
+import TP1_02 from "../TP1/02";
 import TP1_03 from "../TP1/03";
 import TP1_04 from "../TP1/04";
 import TP1_05 from "../TP1/05";
