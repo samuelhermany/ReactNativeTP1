@@ -2,8 +2,6 @@ import { View, StyleSheet } from 'react-native';
 import Item from './item';
 import { lista } from './data';
 
-console.log(lista);
-
 export default function App() {
     return (
       <View style={styles.container}>
