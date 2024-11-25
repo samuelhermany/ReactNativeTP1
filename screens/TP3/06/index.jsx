@@ -1,9 +1,69 @@
-import { View, Text } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Image, View, Text, FlatList, StyleSheet } from 'react-native';
+import Card from './Card';
 
 export default function App() {
-    return (
-        <View>
-            <Text>Hello World</Text>
-        </View>
-    )
+   const [produtos, setProdutos] = useState([]);
+   const [message, setMessage] = useState(null);
+
+   const fetchProducts = async () => {
+      try {
+         const response = await fetch('https://dfef-dmrn-tps-default-rtdb.firebaseio.com/products.json');
+         const data = await response.json();
+   
+         // Extrair os produtos e seus IDs
+         const produtosIds = Object.keys(data);
+         const produtos = Object.values(data);
+         const listaProdutos = produtosIds.map((id, index) => ({
+            id,
+            ...produtos[index],
+         }));
+   
+         // Atualizar o estado com os produtos
+         setProdutos(listaProdutos);
+         } catch (error) {
+            setMessage(error.message); // Certifique-se de que `setMessage` está definido
+         }               
+   }        
+
+   useEffect(() => {
+      fetchProducts();
+   }, []);
+
+   return (
+      <View style={styles.container}>
+         <FlatList
+            data={produtos}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => (
+               <Card
+                  nome={item.nome}
+                  descricao={item.descricao}
+                  preco={item.preco}
+                  imagens={item.imagens}
+               />
+               // <View>
+               //    <Text>Nome: {item.nome}</Text>
+               //    <Text>Descrição: {item.descricao}</Text>
+               //    <Text>Preço: R${item.preco}</Text>                  
+               //    {item.imagens.map((imagem, index) => (
+               //       <Image 
+               //          key={index} 
+               //          source={{ uri: imagem }} 
+               //          style={styles.imagem} 
+               //       />
+               //    ))}
+               // </View>
+            )}
+         />
+      </View>
+   );
 }
+
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
