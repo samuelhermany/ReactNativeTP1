@@ -24,8 +24,7 @@ export default function Card ({ nome, descricao, preco, imagens }) {
 const styles = StyleSheet.create({
    container: {                
       flexDirection: 'column',
-      padding: 5,
-      marginHorizontal: 10,
+      padding: 5,      
       marginVertical: 5,
       borderWidth: 1,
       borderColor: 'black',
