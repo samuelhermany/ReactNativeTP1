@@ -19,11 +19,10 @@ export default function App() {
             id,
             ...produtos[index],
          }));
-   
-         // Atualizar o estado com os produtos
+            
          setProdutos(listaProdutos);
       } catch (error) {
-         setMessage(error.message); // Certifique-se de que `setMessage` está definido
+         setMessage(error.message);
       }               
    }        
 
