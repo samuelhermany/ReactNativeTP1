@@ -15,7 +15,7 @@ export default function App() {
          // Verifica se o nome do produto contém o valor digitado no campo input
         produto.nome.toLowerCase().includes(filtro.toLowerCase())
       );
-      // atualzia a lista de produtos filtrados
+      // atualiza a lista de produtos filtrados
       setProdutosFiltrados(filtrados);
    };
 
