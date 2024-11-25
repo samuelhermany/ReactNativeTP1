@@ -6,6 +6,7 @@ export default function App() {
    const [produtos, setProdutos] = useState([]);
    const [message, setMessage] = useState(null);
 
+   // Obtém a lista de produtos do Firebase
    const fetchProducts = async () => {
       try {
          const response = await fetch('https://dfef-dmrn-tps-default-rtdb.firebaseio.com/products.json');
@@ -21,11 +22,12 @@ export default function App() {
    
          // Atualizar o estado com os produtos
          setProdutos(listaProdutos);
-         } catch (error) {
-            setMessage(error.message); // Certifique-se de que `setMessage` está definido
-         }               
+      } catch (error) {
+         setMessage(error.message); // Certifique-se de que `setMessage` está definido
+      }               
    }        
 
+   // Popula a lista de produtos quando o componente é montado
    useEffect(() => {
       fetchProducts();
    }, []);
